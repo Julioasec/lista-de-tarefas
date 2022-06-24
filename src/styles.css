@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Duru+Sans&display=swap');
+
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #1B2838;
+    font-family: 'Duru Sans', sans-serif;
+    color: #f8f9fa;
+}
+
+button{
+    margin: 5px;    
+    padding: 10px;
+    border-radius: 5px;
+    transition: .4s;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: #f8f9fa;
+}
+
+.tarefas-acesso a:hover{
+    text-decoration: underline;
+}
+
+.mobile-only{
+    display: none;
+}
