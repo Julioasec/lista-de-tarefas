@@ -1,6 +1,6 @@
 .home-container{
+    margin-top: 5rem;
     width: 90%;
-    border: 1px solid red;
     margin: 0 auto;
 }
 .topo{
@@ -95,8 +95,13 @@ button{
     
 }
 
+.tarefas-acesso a{
+    color: #1ed760;
+}
+
 .tarefas-acesso a:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .text-center{
@@ -119,18 +124,12 @@ button{
 }
 
 
-
-
-
-
-
 @media screen and (max-width: 800px) {
     .home-container{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border: 1px solid red;
         align-items: center;
     }
 

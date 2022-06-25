@@ -8,6 +8,7 @@
 }
 
 body{
+    margin: 0;
     background-color: #1B2838;
     font-family: 'Duru Sans', sans-serif;
     color: #f8f9fa;
@@ -26,10 +27,6 @@ button{
 a{
     text-decoration: none;
     color: #f8f9fa;
-}
-
-.tarefas-acesso a:hover{
-    text-decoration: underline;
 }
 
 .mobile-only{
