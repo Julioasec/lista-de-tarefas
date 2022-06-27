@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
+
 @Component({
   selector: 'app-tarefas',
   templateUrl: './tarefas.component.html',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarefasComponent implements OnInit {
 
-  constructor() { }
+  layout = 'lista';
+
+  constructor() {}
+
 
   ngOnInit(): void {
+  }
+
+  alterarLayout(layout:string):void{
+      this.layout = layout
   }
 
 }

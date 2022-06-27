@@ -2,6 +2,7 @@
     margin-top: 5rem;
     width: 90%;
     margin: 0 auto;
+
 }
 .topo{
     display: flex;
@@ -57,28 +58,6 @@
     justify-content: flex-end;
     
 }
-
-button{
-    color: #f8f9fa;
-}
-
-.btn-success{
-    background-color: #198754;
-}
-
-.btn-success:hover{
-    background-color: #20c997;
-}
-
-.btn-primary{
-    background-color: #123ca8;
-}
-
-
-.btn-primary:hover{
-    background-color: #0d6efd;
-}
-
 
 .tarefas-acesso{
     display: flex;

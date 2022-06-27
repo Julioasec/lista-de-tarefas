@@ -1,1 +1,37 @@
-<p>tarefas works!</p>
+<div class="tarefas-container">
+<div class="menu">
+    <h1 class="titulo">Suas tarefas</h1>
+<div class="tarefas-opcoes">
+    <form class="pesquisa" autocomplete="off">
+        <label for="input-pesquisa">Pesquisar Tarefa:</label>
+        <input type="text" id="input-pesquisa">
+    </form>
+    <div class="layout">
+        Exibição:
+        <div class="layout-opcoes">
+                <button (click)="alterarLayout('lista')">
+                   Lista
+                </button>
+                <button (click)="alterarLayout('solo')">
+                    I
+                </button>
+                <button (click)="alterarLayout('par')">
+                    II
+                </button>
+        </div>
+    </div>
+   
+</div>
+
+</div>
+<div class="btn-group">
+    <button class="btn btn-success" routerLink="/nova-tarefa">Nova Tarefa</button>
+</div>
+
+<!-- Tarefas -->
+<div class="tarefas">
+    <ul class="{{'ul-'+layout}}">
+       
+    </ul>
+</div>
+</div>
