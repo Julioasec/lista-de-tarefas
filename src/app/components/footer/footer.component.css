@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+}
+
+.footer{
+    background-color: #171A21;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.embed-text{
+    font-style: italic;
+    font-weight: bold;
+}
+
+.contatos{
+    display: flex;
+    justify-content: center;
+}
+
+.contatos > a{
+    margin: .9rem ;
+}
+
+.contatos > a:hover{
+    color: #1BCE5C;
+}
+
+@media screen and (max-width:480px) {
+    .contatos{
+        flex-direction: column;
+    }
+
+    .contatos > a{
+        margin: .2rem;
+    }
+}
