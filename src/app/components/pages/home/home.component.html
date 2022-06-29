@@ -1,11 +1,11 @@
-<div class="home-container">
+<div class="home-container" (window:resize)="onResize()">
     <div class="mobile-only text-center">
         <p>Seja bem vindo. <br> O que gostaria de fazer hoje?</p>
     </div>
     <div class="topo">
         <div class="tarefas-acesso">
             <div>
-                <p class="text-center">Cadastre uma <button class="btn-success">Nova Tarefa</button></p>
+                <p class="text-center">Cadastre uma <button class="btn btn-success">Nova Tarefa</button></p>
             </div>
             <div class="separador">ou</div>
             <div>
@@ -17,21 +17,6 @@
         </div>
     </div>
     <div class="card-group">
-            <div class="card">
-                <div class="card-header">
-                    <p class="card-text">
-                        Tarefa A
-                    </p>
-                </div>
-                <div class="card-body">
-                    <p class="card-text">
-                        Comprar um colchãoasd asdasdasdasdasda asdas  a a a a a a a dasdasdada sdadasasdsadas
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button class="btn-primary">Detalhes</button>
-                    <button class="btn-success">Concluir</button>
-                </div>
-            </div>
+        <app-tarefa></app-tarefa>
     </div>
 </div>

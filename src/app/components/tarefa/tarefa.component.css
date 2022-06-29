@@ -1,0 +1,144 @@
+.card-lista{
+    padding: 10px 10px 0;
+    min-width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-solo{
+    background-color: rgba(16, 24, 34, 0.322);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    max-width: 50%;
+    margin: 0 auto;
+}
+
+.card-par{
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    margin: 0 auto;
+    min-width: 35%;
+    max-width: 90%;
+    background-color: rgba(16, 24, 34, 0.322);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.card-header-lista{
+    text-align: center;
+
+}
+
+.card-header-solo{
+    text-align: center;
+    border-bottom: 1px solid #cecece;
+}
+
+.card-header-par{
+    text-align: center;
+    border-bottom: 1px solid #cecece;
+}
+
+.card-body-lista{
+    padding-right: 1rem;
+    max-height: 100px;
+    overflow-x: scroll;
+}
+
+.card-body-solo{
+    padding: 1rem;
+    height: 250px;
+    overflow-x: scroll;
+}
+
+.card-body-par{
+    padding: 1rem;
+    height: 250px;
+    overflow-x: scroll;
+}
+
+
+.card-footer-lista{
+    display: flex;
+    padding: 1rem 0;
+}
+
+.card-footer-solo{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    border-top: 1px solid #cecece;
+}
+
+.card-footer-par{
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    border-top: 1px solid #cecece;
+}
+
+
+@media screen and (max-width:900px) {
+    .card-solo{
+        max-width: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (max-width:450px) {
+    .card-lista{
+        width: 100%;
+    }
+
+    .card-header-lista{
+        text-align: center;
+    
+    }
+    
+    .card-footer-lista{
+        overflow-x: scroll;
+        width: 100%;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.card:hover{
+    box-shadow: 1px 1px 3px white, -1px -1px 3px white;
+    background-color: #0e1014;
+}
+
+.card-header{
+    width: 90%;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+.card-body{
+    width: 90%;
+    min-height: 7rem;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto 20px;
+}
+
+.card-footer{
+    display: flex;
+    justify-content: flex-end;
+    
+}

@@ -14,7 +14,16 @@ export class HomeComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    if(window.innerWidth <= 450){
+    this.redirect()
+  }
+
+  onResize():void{
+    this.redirect()
+  }
+
+  redirect():void{
+    let janelaLargura = window.innerWidth
+    if(janelaLargura<=450){
       this.router.navigate(['/tarefas'])
     }
   }

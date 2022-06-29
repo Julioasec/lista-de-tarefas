@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 
@@ -12,7 +13,7 @@ export class TarefasComponent implements OnInit {
 
   layout = 'lista';
 
-  constructor() {}
+  constructor(private router:Router) {}
 
 
   ngOnInit(): void {
@@ -22,4 +23,28 @@ export class TarefasComponent implements OnInit {
       this.layout = layout
   }
 
-}
+  onResize(): void{
+    let largura = window.innerWidth
+    
+    if(largura <=500){
+
+      if(this.layout === 'solo'){
+        this.layout = 'lista'
+      }
+    }
+    
+    if(largura <=800){
+      
+      if(this.layout === 'par'){
+        this.layout = 'solo'
+      }
+    }
+
+    
+    console.log(this.layout);
+    
+  }
+   
+  
+
+  }
