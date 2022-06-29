@@ -10,10 +10,24 @@ layout = 'lista';
 
   constructor() { }
 
+  // CRUD
+   
+  //Create
+  criarTarefa(): void{
 
-  alterarLayout(layout:string): void{
-      this.layout = layout;
+  }
+
+  //Read
+  resgatarTarefas(): void{
+
+  }
+
+    //Inativo, por enquanto
+
+  //Delete 
+  deletarTarefas(): void{
     
-}
+  }
+
 
 }
