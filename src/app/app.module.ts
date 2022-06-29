@@ -7,6 +7,7 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { TarefasComponent } from './components/pages/tarefas/tarefas.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TarefaComponent } from './components/tarefa/tarefa.component';
+import { NovaTarefaComponent } from './components/pages/nova-tarefa/nova-tarefa.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TarefaComponent } from './components/tarefa/tarefa.component';
     TarefasComponent,
     HomeComponent,
     FooterComponent,
-    TarefaComponent
+    TarefaComponent,
+    NovaTarefaComponent
  ],
   imports: [
     BrowserModule,

@@ -1,0 +1,43 @@
+.nova-tarefa{
+padding: 2rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.titulo input{
+    height: 2rem;
+    text-align: center;
+}
+
+.titulo input, .descricao textarea{
+    width: 20rem;
+    margin-top:1rem;
+    border-radius: 4px;
+    padding: 0 .5rem;
+    background-color: #2A3F5A;
+    color: #f8f9fa;
+}
+
+.descricao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descricao textarea{
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    resize: none;
+}
+
