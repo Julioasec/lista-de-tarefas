@@ -14,8 +14,10 @@ layout = 'lista';
   // CRUD
    
   //Create
-  criarTarefa(): void{
-
+  criarTarefa(tarefa:Tarefa): void{
+   let id = tarefa.id
+    
+    localStorage.setItem(id!, JSON.stringify(tarefa))  
   }
 
   //Read
@@ -36,10 +38,15 @@ layout = 'lista';
    }
   
 
+  //Update
  finalizarTarefa(id: string, status: Status): void{
     let tarefa = this.resgatarTarefa(id)
     tarefa.status = status
     localStorage.setItem(id, JSON.stringify(tarefa))
+ }
+
+ resgatarUltimoId(): string{
+  return (localStorage.length).toString()
  }
 
 }

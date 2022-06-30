@@ -1,12 +1,16 @@
 <div class="nova-tarefa">
-    <form>
+    <form (ngSubmit)="criarTarefa($event.preventDefault())" [formGroup]="novaTarefa" #formDir='ngForm'>
         <label class="titulo">
             Um titulo bem legal pra sua nova tarefa:
-            <input type="text" spellcheck="false">
+            <input type="text" spellcheck="false" formControlName='titulo' required>
+            <div class="erro" *ngIf="titulo.invalid && formDir.submitted">
+            <p *ngIf="titulo.errors?.['required']">Ei!! Não consigo criar uma tarefa sem um nome...</p>
+        </div>
         </label>
+        
         <label class="descricao">
             Uma descrição bem detalhada do que isso significa:
-            <textarea id="" cols="40" rows="10" spellcheck="false"></textarea>
+            <textarea id="" cols="40" rows="10" spellcheck="false" formControlName="descricao"></textarea>
         </label>
         <button class="btn btn-primary">Registrar</button>
     </form>

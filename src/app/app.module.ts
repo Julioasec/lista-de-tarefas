@@ -8,6 +8,7 @@ import { TarefasComponent } from './components/pages/tarefas/tarefas.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TarefaComponent } from './components/tarefa/tarefa.component';
 import { NovaTarefaComponent } from './components/pages/nova-tarefa/nova-tarefa.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,9 @@ import { NovaTarefaComponent } from './components/pages/nova-tarefa/nova-tarefa.
  ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

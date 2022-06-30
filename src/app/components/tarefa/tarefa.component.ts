@@ -19,12 +19,6 @@ status  = {
   concluido: Status.concluido
 }
 
-
-
-
-
-
-
   constructor(private tarefasService: TarefasService) { }
 
   ngOnInit(): void { }

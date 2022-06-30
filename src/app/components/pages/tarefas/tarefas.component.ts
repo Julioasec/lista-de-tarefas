@@ -23,10 +23,7 @@ export class TarefasComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.resgatarTarefas()
-    console.log(this.tarefasPendentes);
-    console.log(this._listaDeTarefas);
-    
+    this.resgatarTarefas()    
   }
 
   alterarLayout(layout:string):void{
