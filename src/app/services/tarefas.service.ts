@@ -1,5 +1,5 @@
-import { LocationStrategy } from '@angular/common';
 import { Injectable } from '@angular/core';
+import { Tarefa } from '../interfaces/tarefa';
 
 @Injectable({
   providedIn: 'root'
@@ -18,16 +18,24 @@ layout = 'lista';
   }
 
   //Read
-  resgatarTarefas(): void{
+  resgatarTarefas(): Tarefa[]{
+    let tarefas: Tarefa[] = []
+    let localStorageLength = localStorage.length -1
 
+    for(let i = 0; i<= localStorageLength; i++){
+        let resposta: Tarefa = JSON.parse(localStorage.getItem(i.toString()) || '')
+        tarefas.push(resposta)
+    }
+
+    return tarefas;
   }
 
-    //Inativo, por enquanto
+ resgatarTarefa(): void {
 
-  //Delete 
-  deletarTarefas(): void{
-    
-  }
+   }
+  
+ finalizarTarefa(): void{
 
+ }
 
 }
