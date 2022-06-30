@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Tarefa } from 'src/app/interfaces/tarefa';
+import { TarefasService } from 'src/app/services/tarefas.service';
 
 
 
@@ -12,11 +14,14 @@ import { Router } from '@angular/router';
 export class TarefasComponent implements OnInit {
 
   layout = 'lista';
+  _listaDeTarefas: Tarefa[] = []
 
-  constructor(private router:Router) {}
+
+  constructor(private router:Router, private tarefasService: TarefasService) {}
 
 
   ngOnInit(): void {
+    this.resgatarTarefas()
   }
 
   alterarLayout(layout:string):void{
@@ -32,17 +37,17 @@ export class TarefasComponent implements OnInit {
         this.layout = 'lista'
       }
     }
-    
+
     if(largura <=800){
       
       if(this.layout === 'par'){
         this.layout = 'solo'
       }
     }
+  }
 
-    
-    console.log(this.layout);
-    
+  resgatarTarefas(): void{
+    this._listaDeTarefas = this.tarefasService.resgatarTarefas()  
   }
    
   
