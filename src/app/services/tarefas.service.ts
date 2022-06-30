@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Status } from '../enums/Status';
 import { Tarefa } from '../interfaces/tarefa';
 
 @Injectable({
@@ -23,19 +24,22 @@ layout = 'lista';
     let localStorageLength = localStorage.length -1
 
     for(let i = 0; i<= localStorageLength; i++){
-        let resposta: Tarefa = JSON.parse(localStorage.getItem(i.toString()) || '')
+        let resposta = this.resgatarTarefa(i.toString())
         tarefas.push(resposta)
     }
 
     return tarefas;
   }
 
- resgatarTarefa(): void {
-
+ resgatarTarefa(id:string): Tarefa {
+    return JSON.parse(localStorage.getItem(id) || '')
    }
   
- finalizarTarefa(): void{
 
+ finalizarTarefa(id: string, status: Status): void{
+    let tarefa = this.resgatarTarefa(id)
+    tarefa.status = status
+    localStorage.setItem(id, JSON.stringify(tarefa))
  }
 
 }

@@ -1,16 +1,17 @@
 <div class="card-{{layout}}">
     <div class="card-header-{{layout}}">
         <p class="card-text{{layout}}">
-            {{titulo}}
+            {{tarefa.titulo}}
         </p>
     </div>
     <div class="card-body-{{layout}}">
         <p class="card-text-{{layout}}">
-            {{descricao}}
+            {{tarefa.descricao}}
+            {{tarefa.id}}
         </p>
     </div>
     <div class="card-footer-{{layout}}">
-        <button class="btn btn-danger">Excluir</button>
-        <button class="btn btn-success">Concluir</button>
+        <button class="btn btn-danger" (click)="finalizarTarefa(tarefa.id!, status.cancelado)">Excluir</button>
+        <button class="btn btn-success" (click)="finalizarTarefa(tarefa.id!, status.concluido)">Concluir</button>
     </div>
 </div>

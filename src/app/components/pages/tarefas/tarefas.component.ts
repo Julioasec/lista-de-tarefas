@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Status } from 'src/app/enums/enums';
+import { Status } from 'src/app/enums/Status';
 import { Tarefa } from 'src/app/interfaces/tarefa';
 import { TarefasService } from 'src/app/services/tarefas.service';
 
@@ -24,6 +24,9 @@ export class TarefasComponent implements OnInit {
 
   ngOnInit(): void {
     this.resgatarTarefas()
+    console.log(this.tarefasPendentes);
+    console.log(this._listaDeTarefas);
+    
   }
 
   alterarLayout(layout:string):void{
@@ -52,7 +55,7 @@ export class TarefasComponent implements OnInit {
     this._listaDeTarefas = this.tarefasService.resgatarTarefas()
     this.tarefasPendentes = this._listaDeTarefas.filter(tarefa=>{
       return tarefa.status === Status.pendente       
-    })
+    })   
   }
    
   
