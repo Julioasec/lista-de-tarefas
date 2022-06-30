@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Tarefa } from 'src/app/interfaces/tarefa';
 
 @Component({
   selector: 'app-tarefa',
@@ -8,6 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TarefaComponent implements OnInit {
 
 @Input() layout!: string
+@Input() id!: string
+@Input() titulo!: string
+@Input() descricao!: string
 
   constructor() { }
 

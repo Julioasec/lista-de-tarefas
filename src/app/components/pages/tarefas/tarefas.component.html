@@ -29,26 +29,14 @@
 </div>
 
 <!-- Tarefas -->
-<div class="tarefas">
-    <ul class="{{'ul-'+layout}}">
-        <li class="{{'li-'+layout}}">
-            <app-tarefa layout="{{layout}}"></app-tarefa>
-        </li>
-        <li class="{{'li-'+layout}}">
-            <app-tarefa layout="{{layout}}"></app-tarefa>
-        </li>
-        <li class="{{'li-'+layout}}">
-            <app-tarefa layout="{{layout}}"></app-tarefa>
-        </li>
-        <li class="{{'li-'+layout}}">
-            <app-tarefa layout="{{layout}}"></app-tarefa>
-        </li>
-        <li class="{{'li-'+layout}}">
-            <app-tarefa layout="{{layout}}"></app-tarefa>
-        </li>
-        <li class="{{'li-'+layout}}">
-            <app-tarefa layout="{{layout}}"></app-tarefa>
+<div class="tarefas" *ngIf="tarefasPendentes.length !== 0; else noContent">
+    <ul class="{{'ul-'+layout}}" >
+        <li class="{{'li-'+layout}}" *ngFor="let tarefa of tarefasPendentes" >
+            <app-tarefa layout="{{layout}}" id="{{tarefa.id}}" titulo="{{tarefa.titulo}}" descricao="{{tarefa.descricao}}"></app-tarefa>
         </li>
     </ul>
 </div>
+<ng-template #noContent>
+    <p style="text-align:center;">Não há tarefas pendentes.</p>
+</ng-template>
 </div>

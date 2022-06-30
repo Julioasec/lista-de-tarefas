@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Status } from 'src/app/enums/enums';
 import { Tarefa } from 'src/app/interfaces/tarefa';
 import { TarefasService } from 'src/app/services/tarefas.service';
 
@@ -14,7 +15,8 @@ import { TarefasService } from 'src/app/services/tarefas.service';
 export class TarefasComponent implements OnInit {
 
   layout = 'lista';
-  _listaDeTarefas: Tarefa[] = []
+  _listaDeTarefas!: Tarefa[]
+  tarefasPendentes!: Tarefa[]
 
 
   constructor(private router:Router, private tarefasService: TarefasService) {}
@@ -47,7 +49,10 @@ export class TarefasComponent implements OnInit {
   }
 
   resgatarTarefas(): void{
-    this._listaDeTarefas = this.tarefasService.resgatarTarefas()  
+    this._listaDeTarefas = this.tarefasService.resgatarTarefas()
+    this.tarefasPendentes = this._listaDeTarefas.filter(tarefa=>{
+      return tarefa.status === Status.pendente       
+    })
   }
    
   
