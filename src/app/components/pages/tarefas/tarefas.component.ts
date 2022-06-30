@@ -15,15 +15,15 @@ import { TarefasService } from 'src/app/services/tarefas.service';
 export class TarefasComponent implements OnInit {
 
   layout = 'lista';
-  _listaDeTarefas!: Tarefa[]
   tarefasPendentes!: Tarefa[]
-
+  _listaDeTarefas!: Tarefa[]
+  _filtroDoUsuario: string = ''
 
   constructor(private router:Router, private tarefasService: TarefasService) {}
 
 
   ngOnInit(): void {
-    this.resgatarTarefas()    
+    this.resgatarTarefas()   
   }
 
   alterarLayout(layout:string):void{
@@ -49,12 +49,24 @@ export class TarefasComponent implements OnInit {
   }
 
   resgatarTarefas(): void{
-    this._listaDeTarefas = this.tarefasService.resgatarTarefas()
-    this.tarefasPendentes = this._listaDeTarefas.filter(tarefa=>{
+    this._listaDeTarefas = this.tarefasService.resgatarTarefas().filter(tarefa=>{
       return tarefa.status === Status.pendente       
-    })   
+    })
+
+    this.tarefasPendentes = this._listaDeTarefas
   }
    
-  
+  set filtro(valor: string){
+    this._filtroDoUsuario = valor
+
+    this._listaDeTarefas = this.tarefasPendentes.filter(tarefa=>{
+      return tarefa.titulo.toLocaleLowerCase().includes(this._filtroDoUsuario.toLocaleLowerCase())
+    })
+  }
+
+  get filtro(){
+    return this._filtroDoUsuario
+  }
+    
 
   }
