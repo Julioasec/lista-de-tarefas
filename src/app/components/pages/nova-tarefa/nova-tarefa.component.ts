@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Status } from 'src/app/enums/Status';
-import { Tarefa } from 'src/app/interfaces/tarefa';
 import { TarefasService } from 'src/app/services/tarefas.service';
 
 @Component({
@@ -11,17 +10,22 @@ import { TarefasService } from 'src/app/services/tarefas.service';
 })
 export class NovaTarefaComponent implements OnInit {
 
+  id!: string
   novaTarefa!: FormGroup
 
   constructor( private tarefasService: TarefasService) { }
 
   ngOnInit(): void {
+    this.id = this.tarefasService.resgatarUltimoId()
+    
     this.novaTarefa = new FormGroup({
-      id: new FormControl(''),
+      id: new FormControl(this.id),
       titulo: new FormControl('', [Validators.required]),
       descricao: new FormControl(''),
-      status: new FormControl('')
+      status: new FormControl(Status.pendente)
     })
+
+    
   }
 
   get titulo(){
@@ -35,16 +39,14 @@ export class NovaTarefaComponent implements OnInit {
   }
 
 
-  criarTarefa(evento: Event): void{
+  criarTarefa(e: Event, formDirective: FormGroupDirective): void{
    if (this.novaTarefa.invalid) {
       return 
     }
 
-    let id = this.tarefasService.resgatarUltimoId()    
-    this.novaTarefa.patchValue({id})
-    this.novaTarefa.patchValue({descricao: this.descricao})
-    this.novaTarefa.patchValue({status: Status.pendente})
-    
     this.tarefasService.criarTarefa(this.novaTarefa.value)
+  
+    formDirective.resetForm()
+    this.novaTarefa.reset()
   }
 }

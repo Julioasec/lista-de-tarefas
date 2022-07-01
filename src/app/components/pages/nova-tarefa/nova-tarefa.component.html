@@ -1,5 +1,5 @@
 <div class="nova-tarefa">
-    <form (ngSubmit)="criarTarefa($event.preventDefault())" [formGroup]="novaTarefa" #formDir='ngForm'>
+    <form (ngSubmit)="criarTarefa($event.preventDefault(), formDir)" [formGroup]="novaTarefa" #formDir='ngForm'>
         <label class="titulo">
             Um titulo bem legal pra sua nova tarefa:
             <input type="text" spellcheck="false" formControlName='titulo' required>
