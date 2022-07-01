@@ -1,22 +1,14 @@
 <div class="home-container" (window:resize)="onResize()">
-    <div class="mobile-only text-center">
-        <p>Seja bem vindo. <br> O que gostaria de fazer hoje?</p>
-    </div>
     <div class="topo">
-        <div class="tarefas-acesso">
-            <div>
-                <p class="text-center">Cadastre uma <button class="btn btn-success" routerLink="/tarefas/nova-tarefa">Nova Tarefa</button></p>
-            </div>
-            <div class="separador">ou</div>
-            <div>
-                <a routerLink="/tarefas">Visualize suas tarefas</a>
-            </div>
-        </div>
         <div class="titulo">
-            <p>Olá, Fulano. <br> É um bom dia para realizar está tarefa.</p>
+            <p>Olá, usuário!</p>
+            <p *ngIf="tarefasPendentesLength > 0; else noContent">
+                Existe(m) {{tarefasPendentesLength}} tarefa(s) esperando por você. <a routerLink="/tarefas" >Visualizar.</a>
+            </p>
+            <ng-template #noContent>
+                <p>Não há novas tarefas pendentes...</p>
+                <p>Que tal começarmos uma <a routerLink="/tarefas/nova-tarefa">nova tarefa</a> agora?</p>
+            </ng-template>
         </div>
-    </div>
-    <div class="card-group">
-        <app-tarefa></app-tarefa>
     </div>
 </div>

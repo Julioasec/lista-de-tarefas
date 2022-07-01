@@ -1,5 +1,4 @@
 .home-container{
-    width: 90%;
     margin: 0 auto;
 }
 .topo{
@@ -13,75 +12,14 @@
     width: 50%;
 }
 
-.card-group{
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    width: 80%;
+.titulo p ~ p{
+    font-size: 1rem;
 }
 
-.tarefas-acesso{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid #cecece;
-    padding: 10px 10px 20px;
-    border-radius: 5px;
-    background: rgba( 255, 255, 255, 0.35 );
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    margin-top: 2rem;
-    
-}
-
-.tarefas-acesso a{
+.titulo p a{
     color: #1ed760;
-}
-
-.tarefas-acesso a:hover{
-    text-decoration: underline;
-    cursor: pointer;
 }
 
 .text-center{
     text-align: center;
-}
-
-.separador{
-    margin-bottom: 30px;
-}
-
-.separador::after, .separador::before{
-    content: '';
-    display: inline-block;
-    position: relative;
-    bottom: 25%;
-    width: 100px;
-    height: 1px;
-    background-color: #cecece;
-    margin: 0 5px;
-}
-
-
-@media screen and (max-width: 800px) {
-    .home-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .titulo{
-        display: none;
-    }
-
-    .card{
-        display: none;
-    }
-
-    .mobile-only{
-        display: block;
-    }
 }

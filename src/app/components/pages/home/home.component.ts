@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Status } from 'src/app/enums/Status';
+import { Tarefa } from 'src/app/interfaces/tarefa';
+import { TarefasService } from 'src/app/services/tarefas.service';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +11,17 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router) {
+  tarefasPendentesLength!: number
+
+  constructor(private router: Router, private tarefasService: TarefasService) {
     
     
   }
   
   ngOnInit(): void {
     this.redirect()
+    this.resgatarQuantidadeDeTarefas()
+    
   }
 
   onResize():void{
@@ -26,6 +33,12 @@ export class HomeComponent implements OnInit {
     if(janelaLargura<=450){
       this.router.navigate(['/tarefas'])
     }
+  }
+
+  resgatarQuantidadeDeTarefas(): void{
+    this.tarefasPendentesLength = this.tarefasService.resgatarTarefas().filter(tarefa =>{
+      return tarefa.status === Status.pendente
+    }).length
   }
 
 }
