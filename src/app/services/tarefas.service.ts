@@ -39,6 +39,12 @@ layout = 'lista';
   
 
   //Update
+
+  /**
+   * o método de finalizarTarefa não exclui a tarefa do localStorage, só altera o status para cancelada ou concluida
+   * a rota de tarefas se encarrega de somente exibir as tarefas pendentes
+   */
+
  finalizarTarefa(id: string, status: Status): void{
     let tarefa = this.resgatarTarefa(id)
     tarefa.status = status

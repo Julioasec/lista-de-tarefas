@@ -30,6 +30,12 @@ export class TarefasComponent implements OnInit {
       this.layout = layout
   }
 
+  /**
+   * As função de alterar o layout muda o layout das tarefas de acordo com as especificações do cliente
+   * e/ou o tamanho da dela.
+   * A função está desativada por enquanto
+   */
+
   onResize(): void{
     let largura = window.innerWidth
     
@@ -60,7 +66,7 @@ export class TarefasComponent implements OnInit {
     this._filtroDoUsuario = valor
 
     this._listaDeTarefas = this.tarefasPendentes.filter(tarefa=>{
-      return tarefa.titulo.toLocaleLowerCase().includes(this._filtroDoUsuario.toLocaleLowerCase())
+      return tarefa.titulo.toLowerCase().includes(this._filtroDoUsuario.toLowerCase())
     })
   }
 
