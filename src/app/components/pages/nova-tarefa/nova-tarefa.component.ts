@@ -10,19 +10,17 @@ import { TarefasService } from 'src/app/services/tarefas.service';
 })
 export class NovaTarefaComponent implements OnInit {
 
-  id!: string
   novaTarefa!: FormGroup
 
   constructor( private tarefasService: TarefasService) { }
 
   ngOnInit(): void {
-    this.id = this.tarefasService.resgatarUltimoId()
     
     this.novaTarefa = new FormGroup({
-      id: new FormControl(this.id),
+      id: new FormControl(''),
       titulo: new FormControl('', [Validators.required]),
       descricao: new FormControl(''),
-      status: new FormControl(Status.pendente)
+      status: new FormControl('')
     })
 
     
@@ -33,9 +31,8 @@ export class NovaTarefaComponent implements OnInit {
   }
 
   get descricao(){
-    let formDescricao = this.novaTarefa.get('descricao')?.value
+    return this.novaTarefa.get('descricao')?.value  || "Não há uma descrição disponível..."
     
-    return formDescricao || "Não há uma descrição disponível..."
   }
 
 
@@ -43,6 +40,14 @@ export class NovaTarefaComponent implements OnInit {
    if (this.novaTarefa.invalid) {
       return 
     }
+
+    let id = this.tarefasService.resgatarUltimoId()
+
+    this.novaTarefa.patchValue({
+      id,
+      descricao: this.descricao,
+      status: Status.pendente
+    })
 
     this.tarefasService.criarTarefa(this.novaTarefa.value)
   
