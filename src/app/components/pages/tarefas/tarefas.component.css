@@ -51,79 +51,17 @@ form.pesquisa{
 }
 
 .tarefas ul{
-    display: grid;
     list-style: none;
     border: 1px solid #cecece5e;
     border-radius: 5px;
     padding: 1rem;
     margin: 0 1rem 1rem;
+    width: 90%;
 }
 
-
-
-.tarefa{
-    border: 1px solid;
-    border-radius: 5px;
-    margin: 1rem;
-    min-width: 80%;
-    min-height: 200px;
-    max-width: 80%;
-    background-color: #2A3F5A;
-
-}
-
-.tarefa-header{
-    border-bottom: 1px dotted #ccc;
-    margin-bottom: 1rem;
-
-}
-
-.tarefa-titulo{
-   margin: .5rem 
-}
-
-.tarefa-corpo{
-    margin-left: 1vw;
-}
-
-.tarefa-texto{
-    margin: 0;
-}
-
-.tarefa-footer{
-margin: 1rem;
-}
-
-.tarefa-footer .botoes{
-    display: flex;
-   justify-content: flex-end;
-}
-
-.layout-opcoes{
-    margin: 0 1rem;
-}
-
-.layout-opcoes button{
-    position: relative;
-    margin: 0 .4rem;
-    padding: .5rem;
-    background-color: #2A3F5A;
-    border-radius: 5px;
-    width: 50px;
-    cursor: pointer;
-    border: 1px solid white;
-    color: #f8f9fa;
-}
-
-.layout-opcoes button:active{
-    box-shadow: inset 0px 0px 5px white;
-}
-
-
-
+/* Layout Lista*/
 
 .ul-lista{
-    grid-template-columns: 1fr;
     padding-top: 1rem;
 }
 
@@ -134,57 +72,13 @@ margin: 1rem;
    width: 100%;
 }
 
-
-.ul-solo{
-    grid-template-columns: 1fr;
-}
-
-.li-solo{
-   width: 90%;
-   margin: 2rem auto 0;
-}
-
-.ul-par{
-    width: 90%;
-    grid-template-columns: 1fr 1fr;
- 
-}
-
-.li-par{
-    margin-top: 2rem ;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Fim do layout lista*/
 
 
 @media screen and (max-width: 800px) {
     .tarefas-opcoes{
         flex-direction: column;
         align-items: center;
-    }
-
-    .layout{
-       justify-content: center;
-       width: 100%;
-       margin-top: 1rem;
     }
 
     form.pesquisa{
@@ -194,21 +88,5 @@ margin: 1rem;
     
     .tarefas-opcoes input[type='text']{
         width: 70%;
-    }
-
-    .layout-opcoes button:last-child{
-        display: none;
-    }
-}
-
-@media screen and (max-width:500px){
-    .layout{
-        display: none;
-    }
-}
-
-@media screen and (max-width:350px){
-    .layout{
-        flex-direction: column;
     }
 }
